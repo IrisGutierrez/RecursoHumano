@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 class OtraNovedadController extends Controller
 {
     public function Otranovedad(){
+        
         $altabaja= Otranovedad::all();
-        return view ('liquidacion.otroNov.planillaOtraN', compact('altabaja'));
+        return view ('liquidacion.otroNov.planillaOtraN', compact('altabaja','otra'),compact('otranov'));
     }
 public function create(){ 
         //$codigo= App\Novedad::all()

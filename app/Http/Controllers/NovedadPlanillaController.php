@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Novedad;
+use App\Institucion;
 
 
 class NovedadPlanillaController extends Controller
 {
     public function Novedad(){
         $altabaja= Novedad::all();
+        $institucion= Institucion::all();
         return view ('liquidacion.novedad.planillaNov', compact('altabaja'));
     }
 public function create(){

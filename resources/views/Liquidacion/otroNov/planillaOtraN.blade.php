@@ -44,7 +44,7 @@
                                 </tr>
                                 <tr>
                                 <th scope="col">N°</th>
-                                <th scope="col">Institución</th>
+                                
                                 
                                 <th scope="col" style='width: 20%;'>Apellido y Nombres</th>
                                 <th scope="col">D.N.I</th>
@@ -56,6 +56,7 @@
                                 <th scope="col">Total</th>
                                 <th scope="col" style='width: 20%;'>Motivo</th>
                                 <th scope="col"  >Observaciones</th>
+                                <th scope="col">Institución</th>
                                 
                                 </tr>
                                 <tr>
@@ -75,10 +76,9 @@
                         </thead>
                         
                         <tbody>
-                        @foreach($otranovedad as $item)
+                        @foreach($filtro as $item)
                         <tr>
                         <td>{{$item->num}}</td>
-                        <td>{{$item->colegio_id}}</td>
                         
                         <td>{{$item->ApellidoNommbre}}</td>
                         <td>{{$item->dni}}</td>
@@ -90,8 +90,12 @@
                         <td>{{$item->totalN}}</td>
                         <td>{{$item->articulo}}</td>
                         <td>{{$item->observacionesN}}</td>
+                        <td>{{$item->colegio_id}}</td>
                         </tr>
+                       
                         @endforeach
+                        
+                      
                         </tbody>
     </table>
                         </div>

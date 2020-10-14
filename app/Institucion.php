@@ -26,15 +26,16 @@ class Institucion extends Model
 
     public function novedades()
     {
-        return $this->hasMany(Novedad::class);
+        //return $this->hasMany(Novedad::class);
+       return $this->hasMany('App\Novedad','id','colegio_id');
     }
-    public function altasbajas()
+    public function altabajas()
     {
-        return $this->hasMany(Altabaja::class);
+        return $this->hasMany('App\Altabaja','id','colegio_id');
     }
     public function otranovedades()
     {
-        return $this->hasMany(Otranovedad::class);
+        return $this->hasMany('App\Otranovedad','id','colegio_id');
     }
     
 }

@@ -130,8 +130,7 @@ route::get('/VerpdfNovedad', 'NovedadPlanillaController@ver')->name('liquidacion
 route::get('/DescargarpdfNovedad', 'NovedadPlanillaController@descargar')->name('Liquidacion.novedad.descargarpdfNovedad');
 route::delete('Novedad/delete/{id}','NovedadPlanillaController@delete')->name('liquidacion.delete');
 /******************* BOTONES DE LA PLANILA DE OTRAS NOVEDADES : VER , DESCARGAR , GUARDAR , AGREGAR FILA , ELIMINIAR */
-route::get('/otraNovedad','OtraNovedadController@create')->name('Liquidacion.otroNov.planillaOtraN');
-route::get('/otraNovedad','OtraNovedadController@Otranovedad')->name('liquidacion.Otranovedad');
+route::get('/otraNovedad','OtraNovedadController@Otranovedad')->name('Liquidacion.otroNov.planillaOtraN');
 route::get('/OtroNVerpdfNovedad', 'OtraNovedadController@ver')->name('liquidacion.otroNov.verpdfOtraN');
 route::get('/OtroNDescargarpdfNovedad', 'OtraNovedadControllerr@descargar')->name('Liquidacion.otroNov.descargapdfOnov');
 route::delete('OtroNovedad/delete/{id}','OtraNovedadController@delete')->name('liquidacion.delete');

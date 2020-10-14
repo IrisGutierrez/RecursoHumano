@@ -29,7 +29,7 @@
         
 </div>     -->
 
-                
+            
         
         <br>
         
@@ -75,7 +75,7 @@
                         </thead>
                         
                         <tbody>
-                        @foreach($novedad as $item)
+                        @foreach($filtro as $item)
                         <tr>
                         <td>{{$item->num}}</td>
                         <td>{{$item->colegio_id}}</td>

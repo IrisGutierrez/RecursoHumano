@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container" >
    <!-- <div class="row justify-content-center">-->
         <div class="col-md-20">
 
@@ -19,14 +19,13 @@
       
        
        </div>
+       <div style='text-align:center;'>
        <br>
-            
-       <nav class="navbar navbar-light ">
-       <div class="col-md" style='text-align:center;'>
-      <label for="">Tipo de planilla</label>
-  <br>
- 
-  <select name="elegirplanilla" >
+       <div class="form-group row" >
+       <div class="col">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Tipo de planilla</label>
+    
+    <select name="elegirplanilla" >
        
        <option value="" disabled selected>Planillas</option>
        
@@ -36,21 +35,43 @@
       
        
       </select>
-      
-     <br><br>
-      <button class="btn btn-outline-success" type="submit">Search</button>
-     </div></div>
-  
-  
-</nav>
-</div>
-       </div>
-      
+    </div></div>
 
-       </div>
+    <br>
+  
+  <div style='text-align:center;'>
+  <div class="col">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Elegir institución</label>
+    
+    <select name="elegirinstitu" >
+       
+       <option value="" disabled selected>Instituciones</option>
+       @foreach($insti as $item)
+               <option value="{{$item->id}}">{{$item->Institucion}}</option>
+              
+      @endforeach
+       
+      </select>
+    
+  </div></div><br>
+  
+  
+  <div class="col-sm-10">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+  </div>
+  
+</br>
+  
+  
+  
+     
+     
+  
+  
+
 
 <br>
 
-</div>
+
 </form>     
 @endsection

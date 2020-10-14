@@ -12,6 +12,7 @@
 </head>
 <body>
 
+                        
 
 <div class="container" style="min-width: 2700px" >
 <br>
@@ -76,7 +77,9 @@
                         </thead>
                         
                         <tbody>
-                        @foreach($altabaja as $item)
+                        
+                        @foreach($filtro as $item)
+                        
                         <tr>
                         <td>{{$item->num}}</td>
                         <td>{{$item->colegio_id}}</td>
@@ -91,8 +94,12 @@
                         <td>{{$item->totalN}}</td>
                         <td>{{$item->articulo}}</td>
                         <td>{{$item->observacionesN}}</td>
+                   
+                        
                         </tr>
+                       
                         @endforeach
+                       
                         </tbody>
                        
     </table></div>
