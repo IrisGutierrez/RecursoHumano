@@ -54,7 +54,8 @@
                       <div class="form-group">
 
                         <label for="exampleFormControlTextarea1">Image information</label>
-                          <textarea class="form-control" id="InformationImage" name="InformationImage" rows="3" value="{{($datos->InformationImage)}}"></textarea>
+                         <!-- <textarea class="form-control" id="InformationImage" name="InformationImage" rows="3" value="{{($datos->InformationImage)}}"></textarea>-->
+                          <input type="text" class="form-control" id="InformationImage" name="InformationImage" value="{{($datos->InformationImage)}}">
                       </div>
                       
                       <div class="form-row">
@@ -66,12 +67,7 @@
                         
                           
                       
-                        <div class="col">
-                        <label for="formGroupExampleInput">Image name</label>
                         
-                          <input type="text" class="form-control" placeholder="Image name" id="URLimagen" name="URLimagen" value="{{$datos->URLimagen}}" readonly>
-                         
-                        </div>
                         
                       </div>
                       <br>

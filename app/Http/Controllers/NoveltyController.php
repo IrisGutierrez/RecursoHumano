@@ -112,9 +112,15 @@ class NoveltyController extends Controller
                 $datosUpdate->name=$request->name;
                 $datosUpdate->InformationImage=$request->InformationImage;
                 $datosUpdate->URLimagen=$request->URLimagen;
-                $datosUpdate->save();
+                if ($datosUpdate->save()) {
+                    return back()->with('mensaje','Novedad modificada.');
+                }
+                else {
+                    return back()->with('mensaje','Novedad  no modificada.');
+                }
+                
     
-                return back()->with('mensaje','Novedad modificada.');
+                
                 
     
             
