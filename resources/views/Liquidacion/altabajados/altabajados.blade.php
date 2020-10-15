@@ -104,16 +104,16 @@
            </tr>
            <tr>
            <th scope="col">D.N.I</th>
-           <th scope="col" style="width : 20%;">Apellido y Nombres</p></th>
+           <th scope="col" style="width : 20%;"> Apellido y Nombres</p></th>
            <th scope="col">Cargo</th>
            <th scope="col">Carácter</th>
            <th scope="col">Sección</th>
-           <th scope="col" style="width : 20%;">Desde</th>
-           <th scope="col" style="width : 20%;">Hasta</th>
+           <th scope="col" style="width : 20%;"> Desde</th>
+           <th scope="col" style="width : 20%;"> Hasta</th>
            <th scope="col">Total</th>
-           <th scope="col" style="width : 20%;">Motivo</p></th>
-           <th scope="col" style="width : 20%;">  Observaciones</p></th>
-           <th scope="col"> Opcion</th>
+           <th scope="col" style="width : 20%;"> Motivo</p></th>
+           <th scope="col" style="width : 20%;"> Observaciones</p></th>
+           <th scope="col"> OPCION </th>
            
            </tr>
    </thead>

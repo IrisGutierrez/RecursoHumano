@@ -64,10 +64,10 @@ public function create(){
     }
     
    
-    public function destroy(Request $id  ){
+    public function destroy($id){
         
         $datosDelete=Otranovedad::findOrFail($id);
-        $datosDelete->delete();
-        return ('eliminado , volver para atras');
+       $datosDelete->delete();
+       return ('eliminado , volver para atras');
         } 
 }

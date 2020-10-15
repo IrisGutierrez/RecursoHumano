@@ -21,8 +21,8 @@ set_time_limit(180);
       @foreach ($altados as $item)
       <tr>
                                   
-        <th  colspan="3" class="text-right-align" >INSTITUCION/NOMRE:{{$item->Institucion}}</th>
-        <th  colspan="2" class="text-right-align">LOCALIDAD : {{$item->localidad}}</th>
+        <th  colspan="3" class="text-right-align" >INSTITUCION/NOMRE :{{$item->Institucion}}</th>
+        <th  colspan="2" class="text-right-align" > LOCALIDAD : {{$item->localidad}}</th>
       </tr>
         <th scope="col" >CTG : {{$item->ctg}}</th>
         <th scope="col" >TELEFONO : {{$item->telefono}}</th>

@@ -96,8 +96,8 @@
    <thead class="thead-dark">
            <tr >
            <th colspan="4"></th>
-           <th colspan="1" class="text-right-align">Grado</th>
-           <th colspan="3" class="text-center-align">Servicios en el mes</th>
+           <th colspan="1" class="text-right-align"> Grado </th>
+           <th colspan="3" class="text-center-align">Servicios en el mes </th>
            
            <th colspan="2"></th>
            <th colspan="1"></th>

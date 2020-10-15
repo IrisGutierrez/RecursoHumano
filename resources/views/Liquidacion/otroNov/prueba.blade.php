@@ -135,10 +135,8 @@
            <td><p style="font-size:80%; text-align:center">{{$item->articulo}}</p></td>
            <td><p style="font-size:80%; text-align:center">{{$item->observacionesN}}</p></td>
          <td>
-            <form action="{{ route('OtroNovedades/delete')}}" method="POST">
+            <form action="{{ route('OtroNovedades.delete',$item->id)}}" method="POST">
                @csrf 
-               <input type="hidden" min="0" value="{{$item->$colegio_id}}" style="width : 30px; heigth : 100px" name="colegio_id" >
-               <input type="hidden" min="0" value="{{$item->id}}" style="width : 30px; heigth : 100px" name="colegio_id" >
                <button type="submit" onclick="eliminar()" ONCLICK="return confirm ('¿Desea borrar?') ;"class=" btn btn-danger">
                   <i class="fa fa-trash"></i>eliminar
                </button>   

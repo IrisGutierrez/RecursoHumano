@@ -73,6 +73,6 @@ public function create(){
        
           $datosDelete=Altabaja::findOrFail($id);
           $datosDelete->delete();
-          return ('ELIMINADO VOLVER PARA ATRAS');
+          return ('ELIMINADO ,VOLVER PARA ATRAS');
         } 
 }

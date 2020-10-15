@@ -18,17 +18,17 @@ set_time_limit(180);
 <table class="table table-borderless">
   <thead class="thead-dark">
     <tbody>
-      @foreach ($altados as $item)
+      @foreach ($altados  as $item)
                                 <tr>
                                   
-                                  <th  colspan="3" class="text-right-align" >INSTITUCION/NOMRE:{{$item->Institucion}}</th>
-                                  <th  colspan="2" class="text-right-align">LOCALIDAD : {{$item->localidad}}</th>
+                                  <th  colspan="3" class="text-right-align" > INSTITUCION/NOMRE :{{$item->Institucion}}</th>
+                                  <th  colspan="2" class="text-right-align"> LOCALIDAD : {{$item->localidad}}</th>
                                 </tr>
-                                  <th scope="col" >CTG : {{$item->ctg}}</th>
-                                  <th scope="col" >TELEFONO : {{$item->telefono}}</th>
-                                  <th scope="col" >TURNO :{{$item->turno}}</th>
-                                  <th scope="col" >DOMICILIO : {{$item->domicilio}}</p>
-                                  <th scope="col">DEPARTAMENT : {{$item->departamento}}</th>
+                                  <th scope="col" > CTG : {{$item->ctg}}</th>
+                                  <th scope="col" > TELEFONO : {{$item->telefono}}</th>
+                                  <th scope="col" > TURNO :{{$item->turno}}</th>
+                                  <th scope="col" > DOMICILIO : {{$item->domicilio}}</p>
+                                  <th scope="col"> DEPARTAMENT : {{$item->departamento}}</th>
                                 </tr>
   </thead>
     @endforeach     

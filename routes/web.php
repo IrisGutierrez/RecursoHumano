@@ -128,7 +128,7 @@ route::get('planillaDocente/index','OtraNovedadController@create')->name('Liquid
 route::post('planillaDocenteOtraNov/carga','OtraNovedadController@store')->name('Liquidacion.otroNov.prueba');
 //route::get('/otraNovedad','OtraNovedadController@Otranovedad')->name('liquidacion.Otranovedad');
 route::get('/OtroNVerpdfNovedad/{colegio_id}','OtraNovedadController@ver')->name('liquidacion.otroNov.verpdfOtraN');
-route::post('OtroNovedades/delete','OtraNovedadController@destroy')->name('OtroNovedades/delete');
+route::post('OtroNovedades/delete/{id}','OtraNovedadController@destroy')->name('OtroNovedades.delete');
 
 /***********LLENADO DE LA PLANILLA ALTA-BAJA ,DATOS DE LOS DOCENTES */
 route::get('planillaDocente/index','AltaBajaController@create')->name('LiquidacionCreare.ALTABAJA');

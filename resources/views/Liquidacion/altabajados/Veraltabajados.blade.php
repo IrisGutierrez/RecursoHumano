@@ -28,7 +28,7 @@ set_time_limit(180);
         <th scope="col" >TELEFONO : {{$item->telefono}}</th>
         <th scope="col" >TURNO :{{$item->turno}}</th>
         <th scope="col" >DOMICILIO : {{$item->domicilio}}</p>
-        <th scope="col">DEPARTAMENT : {{$item->departamento}}</th>
+        <th scope="col">DEPARTAMENTO : {{$item->departamento}}</th>
       </tr>
   </thead>
     @endforeach     
@@ -41,7 +41,7 @@ set_time_limit(180);
   
         <tr>      
           <td WIDTH="100">
-               <P  style="text-align: right">PLANILLA OTRA NOVEDAD</P>
+               <P style="text-align: right">PLANILLA OTRA NOVEDAD</P>
           </td>    
         </tr>
         <tr> 

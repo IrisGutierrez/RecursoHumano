@@ -13,7 +13,7 @@
 
         <div class="card">
         <div class="form-group col-md-4">
-                        <label for="inputState">elija planilla</label>
+                        <label for="inputState">ELIJA UNA PLANILLA</label>
                         <select id="inputState" name="inputState" class="form-control">
                           <option value ="ALTA Y BAJA"selected>ALTA Y BAJA</option>
                           <option value ="NOVEDAD">NOVEDAD</option>
