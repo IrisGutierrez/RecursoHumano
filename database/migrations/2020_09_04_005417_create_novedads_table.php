@@ -15,7 +15,6 @@ class CreateNovedadsTable extends Migration
     {
         Schema::create('novedads', function (Blueprint $table) {
             $table->id();
-            $table->integer('num')->nullable();
             $table->BigInteger('colegio_id')->unsigned()->nullable();
             $table->integer('dni')->nullable();
             $table->string('ApellidoNommbre')->nullable();

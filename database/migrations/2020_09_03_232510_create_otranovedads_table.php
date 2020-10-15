@@ -15,7 +15,7 @@ class CreateOtranovedadsTable extends Migration
     {
         Schema::create('otranovedads', function (Blueprint $table) {
             $table->id();
-            $table->integer('num')->nullable();
+            
             $table->BigInteger('colegio_id')->unsigned()->nullable();
             $table->integer('dni')->nullable();
             $table->string('ApellidoNommbre')->nullable();
@@ -29,7 +29,7 @@ class CreateOtranovedadsTable extends Migration
             $table->text('observacionesN')->nullable();
             $table->timestamps(); 
 
-            $table->foreign('colegio_id')->references('id')->on('institucions');
+            $table->foreign('colegio_id')->references('id')->on('institucions')->onDelete('cascade');
             
         });
     }

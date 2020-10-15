@@ -7,47 +7,39 @@ use App;
 use PDF;
 use Illuminate\Support\Facades\DB;
 use App\Altabaja;
+use App\Institucion;
+use Carbon\Carbon;
+
 
 class AltaBajaController extends Controller
 {
-    public function altaybaja(){
-        $altabaja= App\Altabaja::all();
-        return view ('liquidacion.altaybaja', compact('altabaja'));
+    public function Otranovedad(){
+        $altabaja= Altabaja::all();
+        
     }
-    public function altaybajapost(Request $request){
+public function create(){
+        
+        $altabaja= Altabaja::all();
+        return view('Liquidacion.altabajados.altabajados');
+    }
+
+
+     public function store(Request $request)
+    {
         $request->validate([
-
-          /*  'NumeroInst'=>'required',
-            'NombreInst'=>'required',
-            'TurnoInst'=>'required',
-            'DomicilioInst'=>'required',
-            'TelefonoInst'=>'required',
-            'LocalidadInst'=>'required',
-            'DepartamentoInst'=>'required',*/
-            'num'=>'required',
+            'colegio_id'=>'required',
             'dni'=>'required',
-            'ApellidoNombre'=>'required',
-            'cargo'=>'required',
-            'caracter'=>'required',
+            'ApellidoNommbre'=>'required',
+            'Cargo'=>'required',
+            'Caracter'=>'required',
             'GradoSeccion'=>'required',
-            'Desde'=>'required',
-            'Hasta'=>'required',
-            'Total'=>'required',
-            'Motivo'=>'required',
-            'Observaciones'=>'required',
-
-        ]);
-                    
-    
-        $datosNuevos=new App\Altabaja;
-       /* $datosNuevos->NumeroInst = $request->NumeroInst;
-        $datosNuevos->NombreInst = $request->NombreInst;
-        $datosNuevos->TurnoInst = $request->TurnoInst;
-        $datosNuevos->DomicilioInst = $request->DomicilioInst;
-        $datosNuevos->TelefonoInst = $request->TelefonoInst;
-        $datosNuevos->LocalidadInst = $request->LocalidadInst;
-        $datosNuevos->DepartamentoInst = $request->DepartamentoInst;*/
-        $datosNuevos->num = $request->num;
+            'desdeN'=>'required',
+            'hastaN'=>'required',
+            'articulo'=>'required', 
+            'observacionesN'=>'required', 
+ ]);
+        
+        $datosNuevos= new Altabaja();
         $datosNuevos->colegio_id = $request->colegio_id;
         $datosNuevos->dni = $request->dni;
         $datosNuevos->ApellidoNommbre = $request->ApellidoNommbre;
@@ -56,35 +48,31 @@ class AltaBajaController extends Controller
         $datosNuevos->GradoSeccion = $request->GradoSeccion;
         $datosNuevos->desdeN = $request->desdeN;
         $datosNuevos->hastaN = $request->hastaN;
-        $datosNuevos->totalN = $request->totalN;
+        $valorUno=Carbon::parse($datosNuevos->desdeN);
+        $valorDos=Carbon::parse($datosNuevos->hastaN);
+        $totalN= $valorUno->diffInDays($valorDos);
+        $datosNuevos->totalN = $totalN;
         $datosNuevos->articulo = $request->articulo;
         $datosNuevos->observacionesN = $request->observacionesN;
         $datosNuevos->save();
-        return view('Liquidacion.altaybaja')->with('colegio_id',$datosNuevos->colegio_id);
-    }
-    public function ver(){
-        $altabaja=App\Altabaja::all();
-        //dd($request);
-        $pdf=\PDF::loadView('liquidacion.verpdfAltaBaja', compact('altabaja'));
-        return $pdf->setPaper('a4', 'landscape')->stream('PlanillaAltaBaja.pdf');
-         
-    }
-    public function descargar(){
-        $altabaja=App\Altabaja::all();
-        //dd($request);
-        $pdf=\PDF::loadView('liquidacion.descargarpdfAltaBaja', compact('altabaja'));
-        return $pdf->setPaper('a4', 'landscape')->download('PlanillaAltaBaja.pdf');
-         
-    }
-   
-    public function delete($id){
-        
-        
-            $datosDelete=App\Altabaja::findOrFail($id);
-            $datosDelete->delete();
-            return back()->with('mensajeDel','Alta/Baja eliminada.');
-    
+        $altabaja=Altabaja::where('colegio_id',$datosNuevos->colegio_id)->get();
+        return view('Liquidacion.altabajados.altabajados',compact('altabaja'))->with('colegio_id',$datosNuevos->colegio_id);
 
+    }
+    public function ver(Request $colegio_id){
+        
+        $altabaja=Altabaja::where('colegio_id',$colegio_id->colegio_id)->get();
+        $altados=Institucion::where('id',$colegio_id->colegio_id)->get();
+        $pdf=\PDF::loadView('Liquidacion.altabajados.Veraltabajados', compact('altados','altabaja'));
+        return $pdf->setPaper('a4','landscape')->stream('Liquidacion.altabajados.altabajados.pdf');
+    }
+    
+   
+    public function destroy($id){
+
+       
+          $datosDelete=Altabaja::findOrFail($id);
+          $datosDelete->delete();
+          return ('ELIMINADO VOLVER PARA ATRAS');
         } 
 }
-?>

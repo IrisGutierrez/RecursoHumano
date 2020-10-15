@@ -59,7 +59,7 @@ set_time_limit(180);
                                 </tr>
   </thead>
   <tbody>
-  @foreach ($altabaja as $item)
+  @foreach ($altabaja ?? '' as $item)
 
 <tr>
 <th scope="row">{{$item->num}}</th>

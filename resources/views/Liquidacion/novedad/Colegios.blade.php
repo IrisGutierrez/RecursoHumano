@@ -12,6 +12,14 @@
         <!--TABLA ALTAS Y BAJAS-->
 
         <div class="card">
+        <div class="form-group col-md-4">
+                        <label for="inputState">elija planilla</label>
+                        <select id="inputState" name="inputState" class="form-control">
+                          <option value ="ALTA Y BAJA"selected>ALTA Y BAJA</option>
+                          <option value ="NOVEDAD">NOVEDAD</option>
+                          <option value = " OTRAS NOVEDADES">OTRAS NOVEDADES</option>
+                        </select>
+        </div>
         <div class="card-header"><b>Ingrese datos de la Institución </b>
                         </div>
                         <br>
@@ -60,6 +68,10 @@
                 <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u>Departamento</b></u></label>
                 <div class="col-sm-3">
                 <input name="departamento" type="text"  class="form-control"   placeholder="Ingrese depto de la institución">
+                </div>
+                <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u>Codigo de Autenticacion</b></u></label>
+                <div class="col-sm-3">
+                <input name="codAutenticacion" type="text"  class="form-control"   placeholder="Ingrese depto de la institución">
                 </div>
                 
                 

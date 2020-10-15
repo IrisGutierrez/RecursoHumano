@@ -87,24 +87,7 @@
                         
                         <tbody>
                                
-                                @foreach ($altabaja as $item)
-
-                                <tr>
-                                <td>{{$item->num}}</td>
-                                <td>{{$item->dni}}</td>
-                                <td>{{$item->ApellidoNombre}}</td>
-                                <td>{{$item->cargo}}</td>
-                                <td>{{$item->caracter}}</td>
-                                <td>{{$item->GradoSeccion}}</td>
-                                <td>{{$item->Desde}}</td>
-                                <td>{{$item->Hasta}}</td>
-                                <td>{{$item->Total}}</td>
-                                <td>{{$item->Motivo}}</td>
-                                <td>{{$item->Observaciones}}</td>
-                                
-                                </tr>
-                                @endforeach
-
+                               
                                 <tr>
                                 <td><input type="number" min="0" style="width : 30px; heigth : 100px" name=num></td>
                                 <td><input type="hidder" min="0" value="{{$colegio_id}}" style="width : 30px; heigth : 100px" name="colegio_id" ></td>

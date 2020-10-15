@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Otranovedad;
+use App\Institucion;
+use Carbon\Carbon;
 
 class OtraNovedadController extends Controller
 {
     public function Otranovedad(){
         $altabaja= Otranovedad::all();
-        return view ('liquidacion.otroNov.planillaOtraN', compact('altabaja'));
+        
     }
 public function create(){
-        //$codigo= App\Novedad::all()
-        return view ('Liquidacion.Otranovedad.planillaOtraN');
+        
+        $altabaja= Otranovedad::all();
+        return view('Liquidacion.otroNov.prueba');
     }
 
 
      public function store(Request $request)
     {
         $request->validate([
-            'num'=>'required',
             'colegio_id'=>'required',
             'dni'=>'required',
             'ApellidoNommbre'=>'required',
@@ -28,16 +31,11 @@ public function create(){
             'GradoSeccion'=>'required',
             'desdeN'=>'required',
             'hastaN'=>'required',
-            'totalN'=>'required', 
             'articulo'=>'required', 
             'observacionesN'=>'required', 
-
-
-            ]);
+ ]);
         
         $datosNuevos= new Otranovedad();
-        
-        $datosNuevos->num = $request->num;
         $datosNuevos->colegio_id = $request->colegio_id;
         $datosNuevos->dni = $request->dni;
         $datosNuevos->ApellidoNommbre = $request->ApellidoNommbre;
@@ -46,35 +44,30 @@ public function create(){
         $datosNuevos->GradoSeccion = $request->GradoSeccion;
         $datosNuevos->desdeN = $request->desdeN;
         $datosNuevos->hastaN = $request->hastaN;
-        $datosNuevos->totalN = $request->totalN;
+        $valorUno=Carbon::parse($datosNuevos->desdeN);
+        $valorDos=Carbon::parse($datosNuevos->hastaN);
+        $totalN= $valorUno->diffInDays($valorDos);
+        $datosNuevos->totalN = $totalN;
         $datosNuevos->articulo = $request->articulo;
         $datosNuevos->observacionesN = $request->observacionesN;
         $datosNuevos->save();
-        return view('Liquidacion.OtroNov.panillaOtraN')->with('colegio_id',$datosNuevos->colegio_id);
+        $altabaja=Otranovedad::where('colegio_id',$datosNuevos->colegio_id)->get();
+        return view('Liquidacion.otroNov.prueba',compact('altabaja'))->with('colegio_id',$datosNuevos->colegio_id);
 
     }
-    public function ver(){
-        $altabaja=Otranovedad::all();
-        //dd($request);
-        $pdf=\PDF::loadView('liquidacion.otroNov.verpdfOtraN', compact('altabaja'));
-        return $pdf->setPaper('a4', 'landscape')->stream('PlanillaNovedad.pdf');
-         
-    }
-    public function descargar(){
-        $altabaja=Otranovedad::all();
-        //dd($request);
-        $pdf=\PDF::loadView('Liquidacion.otroNov.descargapdfOnov', compact('altabaja'));
-        return $pdf->setPaper('a4', 'landscape')->download('PlanillaNovedad.pdf');
-         
-    }
-   
-    public function delete($id){
+    public function ver(Request $colegio_id){
         
-        
-            $datosDelete=Otranovedad::findOrFail($id);
-            $datosDelete->delete();
-            return back()->with('mensajeDel','Alta/Baja eliminada.');
+        $altabaja=Otranovedad::where('colegio_id',$colegio_id->colegio_id)->get();
+        $altados=Institucion::where('id',$colegio_id->colegio_id)->get();
+        $pdf=\PDF::loadView('Liquidacion.otroNov.verpdfOtraNdos', compact('altados','altabaja'));
+        return $pdf->setPaper('a4','landscape')->stream('Liquidacion.otroNov.pdf');
+    }
     
-
+   
+    public function destroy(Request $id  ){
+        
+        $datosDelete=Otranovedad::findOrFail($id);
+        $datosDelete->delete();
+        return ('eliminado , volver para atras');
         } 
 }

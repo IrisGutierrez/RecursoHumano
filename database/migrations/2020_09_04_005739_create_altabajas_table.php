@@ -16,7 +16,6 @@ class CreateAltabajasTable extends Migration
         Schema::create('altabajas', function (Blueprint $table) {
         
            $table->id();
-           $table->integer('num')->nullable();
            $table->BigInteger('colegio_id')->unsigned()->nullable();
            $table->integer('dni')->nullable();
            $table->string('ApellidoNommbre')->nullable();

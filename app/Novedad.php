@@ -10,5 +10,7 @@ class Novedad extends Model
         'id','colegio_id', 'dni', 'ApellidoNommbre', 'Cargo', 'Caracter', 'GradoSeccion', 'desdeN', 'hastaN','totalN','articulo','observacionesN'
     ];
     protected $primaryKey='id';
+   
+  
     
 }

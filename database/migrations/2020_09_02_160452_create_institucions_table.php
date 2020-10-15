@@ -23,7 +23,7 @@ class CreateInstitucionsTable extends Migration
             $table->string('telefono')->nullable();
             $table->string('localidad')->nullable();
             $table->string('departamento')->nullable();
-            
+            $table->string('codAutenticacion')->nullable();
             $table->timestamps();
 
             
