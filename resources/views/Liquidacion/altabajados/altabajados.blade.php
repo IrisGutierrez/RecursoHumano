@@ -136,7 +136,7 @@
          <td>
             <form action="{{ route('liquidacion.altabaja.eliminar',$item->id)}}" method="post">
                @csrf 
-               <button type="submit" ONCLICK="return confirm ('¿Desea borrar?');" sclass=" btn btn-danger">
+               <button type="submit" ONCLICK="return confirm ('¿Esta seguro que desea borrar?');" sclass=" btn btn-danger">
                   <i class="fa fa-trash"></i>eliminar
                </button>   
             </form>
