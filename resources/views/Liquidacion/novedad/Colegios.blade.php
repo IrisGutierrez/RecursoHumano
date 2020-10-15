@@ -20,7 +20,7 @@
                           <option value = " OTRAS NOVEDADES">OTRAS NOVEDADES</option>
                         </select>
         </div>
-        <div class="card-header"><b>Ingrese datos de la Institución </b>
+        <div class="card-header"><b>INGRESE DATOS DE LA INSTITUCION</b>
                         </div>
                         <br>
                         <div class="form-row" >
