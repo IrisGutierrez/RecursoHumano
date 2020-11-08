@@ -134,5 +134,6 @@ route::post('OtroNovedades/delete/{id}','OtraNovedadController@destroy')->name('
 route::get('planillaDocente/index','AltaBajaController@create')->name('LiquidacionCreare.ALTABAJA');
 route::post('planillabaja/carga','AltaBajaController@store')->name('Liquidacion.altabajados.altabajados');
 //route::get('/otraNovedad','OtraNovedadController@Otranovedad')->name('liquidacion.Otranovedad');
+route::get('/filtrar', 'InstitucionPlanillaController@filtrado')->name('liquidacion.filtlistado');
 route::get('/altabajapdf/{colegio_id}','AltaBajaController@ver')->name('liquidacion.altabajados.Veraltabajados');
 route::post('/AltaBajaDos/Delete/{id}','AltaBajaController@destroy')->name('liquidacion.altabaja.eliminar');

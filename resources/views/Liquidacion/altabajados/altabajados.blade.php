@@ -47,11 +47,11 @@
          <div class="form-row">
             
             
-                 <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Caracter </b></u></label>
+                 <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Caracter </b></u></label>
                  <div class="col-sm-3">
                  <input  name="Caracter" type="text"  class="form-control"   placeholder="Ingrese Caracter">
                  </div>
-                 <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Grado-Seccion</b></u></label>
+                 <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Grado-Seccion</b></u></label>
                  <div class="col-sm-3">
                  <input  name="GradoSeccion" type="text"  class="form-control"   placeholder="Ingrese Grado-Seccion">
                  </div>
@@ -60,30 +60,32 @@
          </div>
          <br>
          <div class="form-row">
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u>Desde-Fecha </b></u></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u>Desde-Fecha </b></u></label>
             <div class="col-sm-3">
             <input  name="desdeN" type="date"  class="form-control"   placeholder="Ingrese desde la fecha">
             </div>
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u>Hasta-Fecha</b></u></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u>Hasta-Fecha</b></u></label>
             <div class="col-sm-3">
             <input  name="hastaN" type="date"  class="form-control"   placeholder="Ingrese hasta-fecha">
             </div>          
          </div>
          <br>
          <div class="form-row">
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Articulo </b></u></label>
-            <div class="col-sm-3">
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Motivo-Vacante-Suplencia-Volantia</b></u></label>
+            <div class="col-sm-6">
             <input  name="articulo" type="text"  class="form-control" size=40 style="width:500px"  placeholder="Ingrese Articulo">
             </div>          
          </div>
          <br>  
          <div class="form-row">
                 
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Observaciones </u> </b></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Observaciones </u> </b></label>
             <div class="col-sm-3">
             <input  name="observacionesN" type="text"  class="form-control"  size=40 style="width:500px" placeholder="Ingrese observaciones">
-            </div>        
+            </div>    
+            <br>    
          </div> 
+         <br>
          <button type="submit" class="btn btn-dark" onclick= "return confirm (' Percatarse de no tener errores antes de guardar')" >Guardar</button> 
          <br>
          <a href="{{route('liquidacion.altabajados.Veraltabajados',$colegio_id )}}" target="blank" class="btn btn-secondary">Ver en  PDF PLANILLA OTRA NOVEDAD</a>
@@ -111,7 +113,7 @@
            <th scope="col" style="width : 20%;"> Desde</th>
            <th scope="col" style="width : 20%;"> Hasta</th>
            <th scope="col">Total</th>
-           <th scope="col" style="width : 20%;"> Motivo</p></th>
+           <th scope="col" style="width : 20%;"> Motivo-Vacante-Suplencia-Volantia</p></th>
            <th scope="col" style="width : 20%;"> Observaciones</p></th>
            <th scope="col"> OPCION </th>
            

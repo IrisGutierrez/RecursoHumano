@@ -36,7 +36,7 @@ public function create(){
             'desdeN'=>'required',
             'hastaN'=>'required',
             'articulo'=>'required', 
-            'observacionesN'=>'required', 
+             
  ]);
         
         $datosNuevos= new Altabaja();

@@ -47,11 +47,11 @@
          <div class="form-row">
             
             
-                 <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Caracter </b></u></label>
+                 <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Caracter </b></u></label>
                  <div class="col-sm-3">
                  <input  name="Caracter" type="text"  class="form-control"   placeholder="Ingrese Caracter">
                  </div>
-                 <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Grado-Seccion</b></u></label>
+                 <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Grado-Seccion</b></u></label>
                  <div class="col-sm-3">
                  <input  name="GradoSeccion" type="text"  class="form-control"   placeholder="Ingrese Grado-Seccion">
                  </div>
@@ -60,11 +60,11 @@
          </div>
          <br>
          <div class="form-row">
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Desde-Fecha </b></u></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Desde-Fecha </b></u></label>
             <div class="col-sm-3">
             <input  name="desdeN" type="date"  class="form-control"   placeholder="Ingrese desde la fecha">
             </div>
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Hasta-Fecha </b></u></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Hasta-Fecha </b></u></label>
             <div class="col-sm-3">
             <input  name="hastaN" type="date"  class="form-control"   placeholder="Ingrese hasta-fecha">
             </div>  
@@ -72,7 +72,7 @@
          </div>
          <br>
          <div class="form-row">
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Articulo </b></u></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Tipo de novedad-Acto administrativo </b></u></label>
             <div class="col-sm-3">
             <input  name="articulo" type="text"  class="form-control" size=40 style="width:500px"  placeholder="Ingrese Articulo">
             </div>          
@@ -80,11 +80,12 @@
          <br>  
          <div class="form-row">
                 
-            <label style="text-align:center" for="staticEmail" class="col-sm-1 col-form-label"><b><u> Observaciones </u> </b></label>
+            <label style="text-align:center" for="staticEmail" class="col-sm-2 col-form-label"><b><u> Observaciones </u> </b></label>
             <div class="col-sm-3">
             <input  name="observacionesN" type="text"  class="form-control"  size=40 style="width:500px" placeholder="Ingrese observaciones">
             </div>        
          </div>  
+         <br>
          <button type="submit" class="btn btn-dark" onclick= "return confirm (' Percatarse de no tener errores antes de guardar')" >Guardar</button> 
          <br>
          <a href="{{route('liquidacion.otroNov.verpdfOtraN',$colegio_id )}}" target="blank" class="btn btn-secondary">Ver en  PDF PLANILLA OTRA NOVEDAD</a>
@@ -112,7 +113,7 @@
            <th scope="col" style="width : 20%;">Desde</th>
            <th scope="col" style="width : 20%;">Hasta</th>
            <th scope="col" >Total</th>
-           <th scope="col" style="width : 30%;">Motivo</p></th>
+           <th scope="col" style="width : 30%;">Tipo de novedad-Acto administrativo</p></th>
            <th scope="col" style="width : 20%;"> Observaciones</p></th>
            <th scope="col" style="width : 5%;"> Opcion</th>
            
@@ -122,7 +123,7 @@
    <tbody>
            
           @foreach ($altabaja as $item)
-          
+             
           <tr>
            <td><p style="font-size:80%; text-align:center">{{$item->dni}}</p></td>
            <td><p style="font-size:80%; text-align:center">{{$item->ApellidoNommbre}}</p></td>
@@ -135,16 +136,18 @@
            <td><p style="font-size:80%; text-align:center">{{$item->articulo}}</p></td>
            <td><p style="font-size:80%; text-align:center">{{$item->observacionesN}}</p></td>
          <td>
-            <form action="{{ route('OtroNovedades.delete',$item->id)}}" method="POST">
-               @csrf 
-               <button type="submit" onclick="eliminar()" ONCLICK="return confirm ('¿Desea borrar?') ;"class=" btn btn-danger">
-                  <i class="fa fa-trash"></i>eliminar
-               </button>   
-            </form>
+           
+               <form action="{{ route('OtroNovedades.delete',$item->id)}}" method="POST">
+                  @csrf 
+                        <button type="submit" onclick="eliminar()" ONCLICK="return confirm ('¿Desea borrar?') ;"class=" btn btn-danger">
+                           <i class="fa fa-trash"></i>eliminar
+                        </button>          
+               </form>
+           
          </td>
 
     </tr>
-           
+         
           @endforeach
    </tbody>
   

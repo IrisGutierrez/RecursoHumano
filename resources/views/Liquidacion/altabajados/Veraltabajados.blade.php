@@ -15,7 +15,7 @@ set_time_limit(180);
 
 ?>
 <div class="">
-<table class="table table-bordered">
+<table class="table table-hover">
   <thead class="thead-dark">
     <tbody>
       @foreach ($altados as $item)
@@ -57,7 +57,7 @@ set_time_limit(180);
   <table class="table table-bordered">
   <thead class="thead-dark">
                              <tr >
-                                <th colspan="5"></th>
+                                <th colspan="4"></th>
                                 <th colspan="1" class="text-right-align">Grado</th>
                                 <th colspan="3" class="text-center-align">Servicios en el mes</th>
                                 <th colspan="2"></th>
@@ -72,7 +72,7 @@ set_time_limit(180);
                                 <th scope="col"style='width: 10%;'>Desde</th>
                                 <th scope="col"style='width: 10%;'>Hasta</th>
                                 <th scope="col" style='width: 10%;'>Total</th>
-                                <th scope="col" style='width: 30%;'>Motivo</th>
+                                <th scope="col" style='width: 30%;'>Motivo-Vacante-Suplencia-Volantia</th>
                                 <th scope="col" style='width: 50%;' >Observaciones</th>
                                 
                                </tr>

@@ -1,57 +1,77 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-            <!--  <div class="card-header">{{ __('Dashboard') }}</div>-->
+<div class="container" >
+   <!-- <div class="row justify-content-center">-->
+        <div class="col-md-20">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+
+
+  <form action="" > 
+        
+        <br>
+        <!--TABLA ALTAS Y BAJAS-->
+
+        
+        <div class="card">
+        <div class="card-header"><b>Buscar datos en planilla </b>
                         </div>
-                    @endif
-                    <a href="{{ url('/indexliq') }}" class="btn btn-outline-primary">Volver</a>
-<br><br>
-                    <div class="content ">
+                      <div>
+      
+       
+       </div>
+       <div style='text-align:center;'>
+       <br>
+       <div class="form-group row" >
+       <div class="col">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Tipo de planilla</label>
+    
+    <select name="elegirplanilla" >
+       
+       <option value="" disabled selected>Planillas</option>
+       
+               <option value="AltaBaja">Alta-Baja</option>
+               <option value="Novedades">Novedades</option>
+               <option value="OtrasNovedades">Otras Novedades</option>
+      
+       
+      </select>
+    </div></div>
+
+    <br>
+  
+  <div style='text-align:center;'>
+  <div class="col">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Elegir institución</label>
+    
+    <select name="elegirinstitu" >
+       
+       <option value="" disabled selected>Instituciones</option>
+       @foreach($insti ?? '' as $item)
+               <option value="{{$item->id}}">{{$item->Institucion}}</option>
+              
+      @endforeach
+       
+      </select>
+    
+  </div></div><br>
+  
+  
+  <div class="col-sm-10">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+  </div>
+  
+</br>
+  
+  
+  
+     
+     
+  
+  
+
 
 <br>
-<br>
 
-<form class="form-inline" action="{{route('liquidacion.listado')}}">
 
-<label for="search" class="col-md-3 col-form-label text-md-right">{{ __('Seleccione un tipo de planilla') }}</label>
-            
-            <div class="col-md-3">
-                <input id="search" type="text" min="0" class="form-control @error('search') is-invalid @enderror" name="search" value="" required autocomplete="search" autofocus>
-
-                @error('search')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            </div>
-
-            
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-        </div>
-  
-  </div>
-  </div>
-  </div>
-  
-                  
-              </div>
-                  
-  
-                      
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  @endsection
+</form>     
+@endsection

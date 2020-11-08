@@ -15,7 +15,7 @@ set_time_limit(180);
 
 ?>
 <div class="">
-<table class="table table-bordered">
+<table class="table table-hover">
   <thead class="thead-dark">
     <tbody>
       @foreach ($altados as $item)
